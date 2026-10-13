@@ -4,5 +4,22 @@
 
   <section aria-labelledby="my-dispatch-hubs-title">
     <h2 id="my-dispatch-hubs-title">{{ 'home.my-dispatch-hubs' | translate }}</h2>
+
+    @if (store.loading()) {
+      <mat-spinner diameter="40" [attr.aria-label]="'home.loading' | translate"/>
+    }
+    @if (store.error()) {
+      <p class="error" role="alert">{{ 'home.error' | translate }}</p>
+    }
+
+    <div class="dispatch-hub-grid">
+      @for (dispatchHub of store.dispatchHubs(); track dispatchHub.id) {
+        <app-dispatch-hub-summary
+          [dispatchHub]="dispatchHub"
+          [dispatchOrders]="store.getDispatchOrdersByHubId(dispatchHub.id)"
+          [totalDispatchedTonnage]="store.getTotalDispatchedTonnage(dispatchHub.id)"
+          [availableTonnageCapacity]="store.getAvailableTonnageCapacity(dispatchHub.id)"/>
+      }
+    </div>
   </section>
 </div>

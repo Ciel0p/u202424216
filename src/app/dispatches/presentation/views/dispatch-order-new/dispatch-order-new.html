@@ -1,0 +1,72 @@
+<section class="container-with-spacing" aria-labelledby="dispatch-order-new-title">
+  <h1 id="dispatch-order-new-title">{{ 'dispatch-order-new.title' | translate }}</h1>
+  <h2 class="subtitle">{{ 'dispatch-order-new.subtitle' | translate }}</h2>
+
+  <form class="dispatch-order-form" [formGroup]="form" (ngSubmit)="submit()" novalidate>
+    <mat-form-field>
+      <mat-label>{{ 'dispatch-order-new.brewery-type' | translate }}</mat-label>
+      <mat-select formControlName="breweryType" required
+                  (selectionChange)="onBreweryTypeChange($event.value)">
+        @for (breweryType of breweryTypes; track breweryType) {
+          <mat-option [value]="breweryType">{{ ('brewery-type.' + breweryType) | translate }}</mat-option>
+        }
+      </mat-select>
+      @if (form.controls.breweryType.hasError('required')) {
+        <mat-error>{{ 'dispatch-order-new.error.brewery-type-required' | translate }}</mat-error>
+      }
+    </mat-form-field>
+
+    @if (form.controls.breweryType.value) {
+      @if (dispatchHub(); as hub) {
+        <p class="hub-info" aria-live="polite">
+          {{ 'dispatch-order-new.dispatch-hub' | translate }}: <strong>{{ hub.name }}</strong>
+          <br>
+          {{ 'dispatch-order-new.available-capacity' | translate }}:
+          <strong>{{ availableTonnageCapacity() | number }} {{ 'dispatch-hub-summary.tonnage-unit' | translate }}</strong>
+        </p>
+      } @else {
+        <p class="form-error" role="alert">{{ 'dispatch-order-new.error.hub-not-found' | translate }}</p>
+      }
+    }
+
+    <mat-form-field>
+      <mat-label>{{ 'dispatch-order-new.brewery' | translate }}</mat-label>
+      <mat-select formControlName="breweryId" required>
+        @for (brewery of breweriesStore.breweries(); track brewery.id) {
+          <mat-option [value]="brewery.id">{{ brewery.name }}</mat-option>
+        }
+      </mat-select>
+      @if (form.controls.breweryId.hasError('required')) {
+        <mat-error>{{ 'dispatch-order-new.error.brewery-required' | translate }}</mat-error>
+      }
+    </mat-form-field>
+    @if (breweriesStore.loading()) {
+      <mat-spinner diameter="32" [attr.aria-label]="'dispatch-order-new.loading-breweries' | translate"/>
+    }
+    @if (breweriesStore.error()) {
+      <p class="form-error" role="alert">{{ 'dispatch-order-new.error.breweries-unavailable' | translate }}</p>
+    }
+
+    <mat-form-field>
+      <mat-label>{{ 'dispatch-order-new.assigned-tonnage' | translate }}</mat-label>
+      <input matInput type="number" min="0" formControlName="assignedTonnage" required>
+      @if (form.controls.assignedTonnage.hasError('required')) {
+        <mat-error>{{ 'dispatch-order-new.error.assigned-tonnage-required' | translate }}</mat-error>
+      } @else if (form.controls.assignedTonnage.hasError('min')) {
+        <mat-error>{{ 'dispatch-order-new.error.assigned-tonnage-min' | translate }}</mat-error>
+      }
+    </mat-form-field>
+    @if (tonnageExceeded()) {
+      <p class="form-error" role="alert">{{ 'dispatch-order-new.error.assigned-tonnage-exceeded' | translate }}</p>
+    }
+
+    <div class="actions">
+      <button mat-stroked-button type="button" (click)="cancel()">
+        {{ 'dispatch-order-new.cancel' | translate }}
+      </button>
+      <button mat-flat-button type="submit" [disabled]="form.invalid || tonnageExceeded() || !dispatchHub()">
+        {{ 'dispatch-order-new.create' | translate }}
+      </button>
+    </div>
+  </form>
+</section>

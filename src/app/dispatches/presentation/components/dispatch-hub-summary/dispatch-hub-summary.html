@@ -1,0 +1,42 @@
+<mat-card class="dispatch-hub-summary"
+          appearance="outlined"
+          [attr.aria-labelledby]="'dispatch-hub-' + dispatchHub().id">
+  <mat-card-header>
+    <mat-card-title [id]="'dispatch-hub-' + dispatchHub().id">{{ dispatchHub().name }}</mat-card-title>
+    <mat-card-subtitle>{{ ('brewery-type.' + dispatchHub().breweryType) | translate }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content class="content">
+    @if (dispatchOrders().length === 0) {
+      <p class="empty">{{ 'dispatch-hub-summary.empty' | translate }}</p>
+    } @else {
+      <mat-list [attr.aria-label]="'dispatch-hub-summary.orders' | translate">
+        @for (dispatchOrder of dispatchOrders(); track dispatchOrder.id) {
+          <mat-list-item>
+            <span matListItemTitle>{{ dispatchOrder.breweryName }}</span>
+            <span matListItemMeta>
+              {{ dispatchOrder.assignedTonnage | number }} {{ 'dispatch-hub-summary.tonnage-unit' | translate }}
+            </span>
+          </mat-list-item>
+        }
+      </mat-list>
+    }
+  </mat-card-content>
+
+  <mat-divider/>
+
+  <mat-card-footer class="footer">
+    <div class="indicator">
+      <span class="indicator-label">{{ 'dispatch-hub-summary.total-dispatched-tonnage' | translate }}</span>
+      <span class="indicator-value">
+        {{ totalDispatchedTonnage() | number }} {{ 'dispatch-hub-summary.tonnage-unit' | translate }}
+      </span>
+    </div>
+    <div class="indicator">
+      <span class="indicator-label">{{ 'dispatch-hub-summary.available-tonnage-capacity' | translate }}</span>
+      <span class="indicator-value">
+        {{ availableTonnageCapacity() | number }} {{ 'dispatch-hub-summary.tonnage-unit' | translate }}
+      </span>
+    </div>
+  </mat-card-footer>
+</mat-card>
