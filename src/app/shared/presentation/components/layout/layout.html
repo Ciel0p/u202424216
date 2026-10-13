@@ -1,0 +1,38 @@
+<mat-toolbar class="app-toolbar">
+  <button mat-icon-button
+          type="button"
+          (click)="sidenav.toggle()"
+          [attr.aria-label]="'layout.toggle-menu' | translate">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <img class="brand-logo" [src]="logoUrl" [alt]="'layout.logo-alt' | translate"/>
+  <span class="brand-title">{{ 'app.title' | translate }}</span>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="side" opened class="sidenav">
+    <div class="sidenav-content">
+      <mat-nav-list [attr.aria-label]="'layout.main-navigation' | translate">
+        @for (option of options(); track option.link) {
+          <a mat-list-item
+             [routerLink]="option.link"
+             routerLinkActive="active"
+             ariaCurrentWhenActive="page">
+            <mat-icon matListItemIcon>{{ option.icon }}</mat-icon>
+            <span matListItemTitle>{{ option.label | translate }}</span>
+          </a>
+        }
+      </mat-nav-list>
+      <div class="language-section">
+        <app-language-switcher/>
+      </div>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="main-content">
+    <main>
+      <router-outlet/>
+    </main>
+    <app-footer-content/>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,33 @@
+{
+  "app": {
+    "title": "BrewDog Dispatch Logistics Platform"
+  },
+  "option": {
+    "home": "Home",
+    "new-dispatch-order": "New Dispatch Order"
+  },
+  "layout": {
+    "logo-alt": "BrewDog logo",
+    "main-navigation": "Main navigation",
+    "toggle-menu": "Toggle navigation menu"
+  },
+  "language-switcher": {
+    "label": "Preferred language"
+  },
+  "home": {
+    "title": "Home",
+    "content": "Advanced Dispatch Order and Tonnage Management for Logistics Hubs.",
+    "my-dispatch-hubs": "My Dispatch Hubs"
+  },
+  "footer": {
+    "label": "Site footer",
+    "institutional": "BrewDog - Craft beer brewed sustainably since 2007.",
+    "network-status": "Distribution network: Operational",
+    "copyright": "© {{ year }} BrewDog plc. All rights reserved."
+  },
+  "page-not-found": {
+    "title": "Page not found",
+    "content": "The path {{ invalid_path }} was not found.",
+    "go-home": "Go Home"
+  }
+}

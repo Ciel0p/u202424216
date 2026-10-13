@@ -1,0 +1,28 @@
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px 24px;
+  padding: 16px 24px;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 0.875rem;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.network-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #4caf50;
+}

@@ -1,0 +1,30 @@
+{
+  "dispatch-hubs": [
+    { "id": 1, "name": "Micro Brewery Dispatch Hub", "breweryType": "micro", "maxTonnage": 500 },
+    { "id": 2, "name": "Nano Brewery Dispatch Hub", "breweryType": "nano", "maxTonnage": 200 },
+    { "id": 3, "name": "Regional Brewery Dispatch Hub", "breweryType": "regional", "maxTonnage": 1500 },
+    { "id": 4, "name": "Brewpub Dispatch Hub", "breweryType": "brewpub", "maxTonnage": 300 },
+    { "id": 5, "name": "Large Brewery Dispatch Hub", "breweryType": "large", "maxTonnage": 3000 },
+    { "id": 6, "name": "Contract Brewery Dispatch Hub", "breweryType": "contract", "maxTonnage": 800 }
+  ],
+  "dispatch-orders": [
+    {
+      "id": 1,
+      "dispatchHubId": 1,
+      "breweryType": "micro",
+      "breweryId": "5128df48-79fc-4f0f-8b52-d06be54d0cec",
+      "breweryName": "(405) Brewing Co",
+      "assignedTonnage": 120,
+      "dispatchedAt": "2026-10-10T09:30:00.000Z"
+    },
+    {
+      "id": 2,
+      "dispatchHubId": 4,
+      "breweryType": "brewpub",
+      "breweryId": "ae7b3174-8be8-4d53-a3a5-9b8240970eea",
+      "breweryName": "'s",
+      "assignedTonnage": 80,
+      "dispatchedAt": "2026-10-11T14:15:00.000Z"
+    }
+  ]
+}

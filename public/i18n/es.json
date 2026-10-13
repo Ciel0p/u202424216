@@ -1,0 +1,33 @@
+{
+  "app": {
+    "title": "Plataforma Logística de Despachos de BrewDog"
+  },
+  "option": {
+    "home": "Inicio",
+    "new-dispatch-order": "Nueva Orden de Despacho"
+  },
+  "layout": {
+    "logo-alt": "Logo de BrewDog",
+    "main-navigation": "Navegación principal",
+    "toggle-menu": "Mostrar u ocultar el menú de navegación"
+  },
+  "language-switcher": {
+    "label": "Idioma preferido"
+  },
+  "home": {
+    "title": "Inicio",
+    "content": "Gestión Avanzada de Órdenes de Despacho y Tonelaje para Centros Logísticos.",
+    "my-dispatch-hubs": "Mis Centros de Despacho"
+  },
+  "footer": {
+    "label": "Pie de página",
+    "institutional": "BrewDog - Cerveza artesanal elaborada de forma sostenible desde 2007.",
+    "network-status": "Red de distribución: Operativa",
+    "copyright": "© {{ year }} BrewDog plc. Todos los derechos reservados."
+  },
+  "page-not-found": {
+    "title": "Página no encontrada",
+    "content": "No se encontró la ruta {{ invalid_path }}.",
+    "go-home": "Ir a Inicio"
+  }
+}
