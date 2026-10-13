@@ -17,7 +17,45 @@
   "home": {
     "title": "Home",
     "content": "Advanced Dispatch Order and Tonnage Management for Logistics Hubs.",
-    "my-dispatch-hubs": "My Dispatch Hubs"
+    "my-dispatch-hubs": "My Dispatch Hubs",
+    "loading": "Loading dispatch hubs",
+    "error": "The dispatch hubs could not be loaded."
+  },
+  "dispatch-hub-summary": {
+    "empty": "Empty",
+    "orders": "Dispatch orders",
+    "tonnage-unit": "t",
+    "total-dispatched-tonnage": "Total Dispatched Tonnage",
+    "available-tonnage-capacity": "Available Tonnage Capacity"
+  },
+  "dispatch-order-new": {
+    "title": "New Dispatch Order",
+    "subtitle": "Register Freight Dispatch Order to Your Hub",
+    "brewery-type": "Brewery Type",
+    "brewery": "Destination Brewery",
+    "assigned-tonnage": "Assigned Tonnage",
+    "dispatch-hub": "Dispatch Hub",
+    "available-capacity": "Available Tonnage Capacity",
+    "loading-breweries": "Loading breweries",
+    "create": "Create",
+    "cancel": "Cancel",
+    "error": {
+      "brewery-type-required": "Brewery type is required",
+      "brewery-required": "Destination brewery is required",
+      "assigned-tonnage-required": "Assigned tonnage is required",
+      "assigned-tonnage-min": "Assigned tonnage must be greater than zero",
+      "assigned-tonnage-exceeded": "Assigned tonnage exceeds the available tonnage capacity of the hub",
+      "breweries-unavailable": "Breweries could not be loaded.",
+      "hub-not-found": "There is no dispatch hub for this brewery type."
+    }
+  },
+  "brewery-type": {
+    "micro": "Micro",
+    "nano": "Nano",
+    "regional": "Regional",
+    "brewpub": "Brewpub",
+    "large": "Large",
+    "contract": "Contract"
   },
   "footer": {
     "label": "Site footer",

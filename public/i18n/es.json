@@ -17,7 +17,45 @@
   "home": {
     "title": "Inicio",
     "content": "Gestión Avanzada de Órdenes de Despacho y Tonelaje para Centros Logísticos.",
-    "my-dispatch-hubs": "Mis Centros de Despacho"
+    "my-dispatch-hubs": "Mis Centros de Despacho",
+    "loading": "Cargando centros de despacho",
+    "error": "No se pudieron cargar los centros de despacho."
+  },
+  "dispatch-hub-summary": {
+    "empty": "Vacío",
+    "orders": "Órdenes de despacho",
+    "tonnage-unit": "t",
+    "total-dispatched-tonnage": "Tonelaje Total Despachado",
+    "available-tonnage-capacity": "Capacidad de Tonelaje Disponible"
+  },
+  "dispatch-order-new": {
+    "title": "Nueva Orden de Despacho",
+    "subtitle": "Registrar Orden de Despacho de Carga a su Centro",
+    "brewery-type": "Tipo de Cervecería",
+    "brewery": "Cervecería de Destino",
+    "assigned-tonnage": "Tonelaje Asignado",
+    "dispatch-hub": "Centro de Despacho",
+    "available-capacity": "Capacidad de Tonelaje Disponible",
+    "loading-breweries": "Cargando cervecerías",
+    "create": "Crear",
+    "cancel": "Cancelar",
+    "error": {
+      "brewery-type-required": "El tipo de cervecería es obligatorio",
+      "brewery-required": "La cervecería de destino es obligatoria",
+      "assigned-tonnage-required": "El tonelaje asignado es obligatorio",
+      "assigned-tonnage-min": "El tonelaje asignado debe ser mayor que cero",
+      "assigned-tonnage-exceeded": "El tonelaje asignado supera la capacidad de tonelaje disponible del centro",
+      "breweries-unavailable": "No se pudieron cargar las cervecerías.",
+      "hub-not-found": "No existe un centro de despacho para este tipo de cervecería."
+    }
+  },
+  "brewery-type": {
+    "micro": "Micro",
+    "nano": "Nano",
+    "regional": "Regional",
+    "brewpub": "Brewpub",
+    "large": "Grande",
+    "contract": "Por contrato"
   },
   "footer": {
     "label": "Pie de página",
